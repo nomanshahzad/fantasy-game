@@ -13,6 +13,9 @@ frontend/build/
 *.log
 npm-debug.log*
 
+# Database
+*.db
+
 # OS files
 .DS_Store
 Thumbs.db
