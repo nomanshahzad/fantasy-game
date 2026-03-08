@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const authRoutes = require('./src/routes/authRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const playerRoutes = require('./src/routes/playerRoutes');
 const teamRoutes = require('./src/routes/teamRoutes');
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 // Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/players', playerRoutes);
 app.use('/api/teams', teamRoutes);

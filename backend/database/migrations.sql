@@ -1,9 +1,10 @@
 -- Users table
 CREATE TABLE IF NOT EXISTS users (
   user_id       SERIAL PRIMARY KEY,
+  auth_id       TEXT UNIQUE,
   username      TEXT NOT NULL UNIQUE,
   email         TEXT NOT NULL UNIQUE,
-  password_hash TEXT NOT NULL,
+  password_hash TEXT NOT NULL DEFAULT 'managed_by_supabase',
   is_admin      BOOLEAN NOT NULL DEFAULT FALSE,
   transfers_used INTEGER NOT NULL DEFAULT 0,
   total_points  REAL NOT NULL DEFAULT 0,
